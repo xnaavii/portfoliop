@@ -1,10 +1,9 @@
 from django.shortcuts import render
-
+from .models import Experience
 
 # Create your views here.
-def index(request):
+def display_experience(request):
 
-    title = ("Hello World", "Apple")
-    context = {"title": title}
-
+    experience = Experience.objects.all()
+    context = {"experience": experience }
     return render(request, "portfolio/index.html", context)

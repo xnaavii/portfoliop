@@ -1,4 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
-  {{title}}
+{% for xp in experience %}
+<table>
+  <tr>
+        <th>Title</th>
+        <th>Year Start</th>
+        <th>Year End</th>
+        <th>Skills Used</th>
+      </tr>
+      <tr>
+        <td>{{ xp.title }}</td>
+        <td>{{ xp.year_start }}</td>
+        <td>{{ xp.year_end }}</td>
+        <td>{{ xp.skills_used }}</td>
+      </tr>
+    </table>
+    {% endfor %}
 {% endblock %}
