@@ -1,19 +1,20 @@
 {% extends 'base.html' %}
 {% block content %}
-{% for xp in experience %}
-<table>
-  <tr>
-        <th>Title</th>
-        <th>Year Start</th>
-        <th>Year End</th>
-        <th>Skills Used</th>
-      </tr>
-      <tr>
-        <td>{{ xp.title }}</td>
-        <td>{{ xp.year_start }}</td>
-        <td>{{ xp.year_end }}</td>
-        <td>{{ xp.skills_used }}</td>
-      </tr>
-    </table>
-    {% endfor %}
-{% endblock %}
+<section class="container">
+  <div class="row">
+    <h2 class="text-center mb-4">Experience</h2>
+        {% for xp in experience %}
+        <div class="col-lg-4 col-md-6">
+          <article class="card">
+            <h4 class="card-header">{{ xp.title }}</h4>
+            <div class="card-body">
+              <p>{{ xp.year_start }}</p>
+              <p>{{ xp.year_end }}</p>
+              <p>{{ xp.skills_used }}</p>
+            </div>
+          </article>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+    {% endblock %}
