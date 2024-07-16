@@ -3,14 +3,16 @@
 <section class="container">
   <div class="row">
     <h2 class="text-center mb-4">Experience</h2>
-        {% for xp in experience %}
+        {% for x in experience %}
         <div class="col-lg-4 col-md-6">
           <article class="card">
-            <h4 class="card-header">{{ xp.title }}</h4>
+            <h4 class="card-header">{{ x.title }}</h4>
             <div class="card-body">
-              <p>{{ xp.year_start }}</p>
-              <p>{{ xp.year_end }}</p>
-              <p>{{ xp.skills_used }}</p>
+              <h5 class="card-title"><a href="{{x.company_link}}" target="_balnk">{{ x.company }}</a></h5>
+              <p class="card-text">{{ x.year_start }}</p>
+              <p class="card-text">{{ x.country }}</p>
+              <p class="card-text">{{ x.year_end }}</p>
+              <p class="card-text">{{ x.skills_used }}</p>
             </div>
           </article>
         </div>
