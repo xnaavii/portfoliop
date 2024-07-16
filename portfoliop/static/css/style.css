@@ -1,0 +1,11 @@
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  .fade-animate {
+    opacity: 0; /* Start hidden */
+    animation: fadeIn 1s ease-out; /* Animation properties */
+    opacity: 1;
+  }
+  

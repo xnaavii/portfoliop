@@ -1,22 +1,27 @@
 {% extends 'base.html' %}
 {% block content %}
-<section class="container">
-  <div class="row">
-    <h2 class="text-center mb-4">Experience</h2>
-        {% for x in experience %}
-        <div class="col-lg-4 col-md-6">
+  <section class="container">
+    <div class="row">
+      <h2 class="text-center mb-4">Experience</h2>
+      {% for x in experience %}
+        <div class="col-lg-4 col-md-6 fade-animate">
           <article class="card">
-            <h4 class="card-header">{{ x.title }}</h4>
+            <h4 class="card-header"><a href="{{ x.company_link }}" target="_blank">{{ x.company }}</a></h4>
             <div class="card-body">
-              <h5 class="card-title"><a href="{{x.company_link}}" target="_balnk">{{ x.company }}</a></h5>
-              <p class="card-text">{{ x.year_start }}</p>
-              <p class="card-text">{{ x.country }}</p>
-              <p class="card-text">{{ x.year_end }}</p>
-              <p class="card-text">{{ x.skills_used }}</p>
+              <h5 class="card-title">{{ x.title }}</h5>
+              <p class="card-text">Start: {{ x.year_start }}</p>
+              <p class="card-text">
+                {% if x.year_end %}
+                  End: {{ x.year_end }}
+                {% else %}
+                  Present
+                {% endif %}
+              </p>
+              <p class="card-text">Country: {{ x.country }}</p>
             </div>
           </article>
         </div>
-        {% endfor %}
-      </div>
-    </section>
-    {% endblock %}
+      {% endfor %}
+    </div>
+  </section>
+{% endblock %}
